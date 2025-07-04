@@ -1,0 +1,12 @@
+[deps]
+DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
+EAGO = "bb8be931-2a91-5aca-9f87-79e1cb69959a"
+EOptInterface = "96d9f51d-8c41-4e2d-b1a3-7b48dea3ddd1"
+IfElse = "615f187c-cbe4-4ef1-ba3b-2fcf58d6d173"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+ModelingToolkit = "961ee093-0014-501f-94e3-6117800e7a78"
+NativeNaNMath = "6e4fe5f8-bc0f-434f-9b40-863822321529"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Symbolics = "0c5d862f-8b57-4792-8d23-62f2024744c7"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
