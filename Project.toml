@@ -1,5 +1,6 @@
 [deps]
 DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 EAGO = "bb8be931-2a91-5aca-9f87-79e1cb69959a"
 EOptInterface = "96d9f51d-8c41-4e2d-b1a3-7b48dea3ddd1"
 IfElse = "615f187c-cbe4-4ef1-ba3b-2fcf58d6d173"

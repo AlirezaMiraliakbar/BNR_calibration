@@ -1,5 +1,5 @@
-using ModelingToolkit
-using ModelingToolkit: t_nounits as t, D_nounits as D
+# using ModelingToolkit
+# using ModelingToolkit: t_nounits as t, D_nounits as D
 
 @connector MaterialStream begin
         flow_rate(t) , [input = true];

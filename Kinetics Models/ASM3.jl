@@ -3,8 +3,8 @@
 
 # [2] Henze, M., Gujer, W., Mino, T., & Van Loosedrecht, M. (2006). Activated sludge models ASM1, ASM2, ASM2d and ASM3. IWA publishing.
 
-using ModelingToolkit
-using ModelingToolkit: t_nounits as t, D_nounits as D
+# using ModelingToolkit
+# using ModelingToolkit: t_nounits as t, D_nounits as D
 
 include("./ASM3_Parameters.jl")
 params_asm3 = default_asm3_parameters();
@@ -144,7 +144,7 @@ p37 = params_asm3[:i_SSSTO]
         t12 = f_XI*i_SSXI-i_SSBM
     end
 
-    @variables begin
+    ModelingToolkit.@variables begin
         # State variables 
         # x[1:13] are:
         # S_O2 (O2), S_I (COD), S_s (COD), S_NH4 (N), S_N2 (N), S_NOX (N), S_ALK (Mole), X_I (COD), X_S (COD), X_H (COD), X_STO (COD), X_A (COD), X_SS (SS)

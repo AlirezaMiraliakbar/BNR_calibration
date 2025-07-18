@@ -1,5 +1,5 @@
-using ModelingToolkit
-using ModelingToolkit: t_nounits as t, D_nounits as D
+# using ModelingToolkit
+# using ModelingToolkit: t_nounits as t, D_nounits as D
 
 include("MaterialStream.jl")
 include("../Kinetics Models/ASM3.jl")
