@@ -12,13 +12,13 @@
 #                                                               #
 #################################################################
 
-# using CSV, DataFrames, Distributions
-# using Random, Dates
+using CSV, DataFrames, Distributions
+using Random, Dates
 
 function generate_effluent_ss()
     
     # reading CSV file containing concentrations
-    df = CSV.read("./Effluent/UConn_Effluent.csv", DataFrame)
+    df = CSV.read("./Effluent/UConn_Effluent_converted.csv", DataFrame)
 
     # computing COD from BOD using the previously saved COD/BOD ratios
     ratios_df = CSV.read("./Influent/COD_BOD_ratios.csv", DataFrame)
@@ -31,7 +31,7 @@ function generate_effluent_ss()
 
     # picking dates that are common in both ratios_df and df
     common_dates = intersect(ratios_df.Date, df.Date)
-    # println("Number of common dates: ", length(common_dates))
+    println("Number of common dates: ", length(common_dates))
     
     # Filter both dataframes to only include common dates
     df = df[in.(df.Date, Ref(common_dates)), :]
@@ -41,8 +41,8 @@ function generate_effluent_ss()
     sort!(df, :Date)
     sort!(ratios_df, :Date)
     
-    # println("Number of rows in filtered ratios_df: ", nrow(ratios_df))
-    # println("Number of rows in filtered df: ", nrow(df))
+    println("Number of rows in filtered ratios_df: ", nrow(ratios_df))
+    println("Number of rows in filtered df: ", nrow(df))
     
     # Verify that both dataframes have the same number of rows after filtering
     if nrow(ratios_df) != nrow(df)
@@ -105,4 +105,6 @@ function generate_effluent_ss()
     return effluent_means_vector
 end
 
+# Call the function to generate the effluent data
+generate_effluent_ss()
 

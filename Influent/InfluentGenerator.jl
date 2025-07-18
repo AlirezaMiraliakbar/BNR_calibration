@@ -11,10 +11,10 @@
 #          Storrs, CT                                           #
 #                                                               #
 #################################################################
-# using CSV, DataFrames, Distributions
-# using Random
+using CSV, DataFrames, Distributions
+using Random
 
-function generate_influent_df()
+function generate_influent_ss()
     # reading CSV file containing concentrations
     df = CSV.read("./Influent/UConn_Influent.csv", DataFrame)
 
@@ -95,14 +95,10 @@ function generate_influent_df()
         influent_gen.XTS[i] = df[i, "XTSS(g / L)"] * 1000;
         influent_gen.SHCO[i] = df[i, "Alkalanity (mol/L)"];
     end
-    return influent_gen
-end
-
-function generate_influent_ss()
     # calculate the means of all columns except Date
     # Create a new DataFrame to store means
     influent_means = DataFrame()
-    influent_gen = generate_influent_df()
+        
     # Calculate means for all numeric columns (excluding Date)
     for col_name in names(influent_gen)
         if col_name != "Date"
@@ -120,8 +116,6 @@ function generate_influent_ss()
     influent_means_vector = convert(Vector{Float64}, influent_means_vector)
     return influent_means_vector
 end
-
-#TODO: add a function to read data based on seasonal variations
 
 if abspath(PROGRAM_FILE) == @__FILE__
 influent = generate_influent_ss()

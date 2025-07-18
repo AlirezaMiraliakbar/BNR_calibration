@@ -1,6 +1,6 @@
-# using ModelingToolkit
-# using ModelingToolkit: t_nounits as t, D_nounits as D
-
+using ModelingToolkit, Plots, DifferentialEquations, Unitful, IfElse
+using ModelingToolkit: t_nounits as t, D_nounits as D
+using Symbolics
 
 include("MaterialStream.jl")
 
@@ -15,19 +15,19 @@ include("MaterialStream.jl")
         
             Out1.flow_rate ~ In1.flow_rate + In2.flow_rate
 
-            Out1.x1 ~ (In1.x1*In1.flow_rate + In2.x1*In2.flow_rate) / Out1.flow_rate
-            Out1.x2 ~ (In1.x2*In1.flow_rate + In2.x2*In2.flow_rate) / Out1.flow_rate
-            Out1.x3 ~ (In1.x3*In1.flow_rate + In2.x3*In2.flow_rate) / Out1.flow_rate
-            Out1.x4 ~ (In1.x4*In1.flow_rate + In2.x4*In2.flow_rate) / Out1.flow_rate
-            Out1.x5 ~ (In1.x5*In1.flow_rate + In2.x5*In2.flow_rate) / Out1.flow_rate
-            Out1.x6 ~ (In1.x6*In1.flow_rate + In2.x6*In2.flow_rate) / Out1.flow_rate
-            Out1.x7 ~ (In1.x7*In1.flow_rate + In2.x7*In2.flow_rate) / Out1.flow_rate
-            Out1.x8 ~ (In1.x8*In1.flow_rate + In2.x8*In2.flow_rate) / Out1.flow_rate
-            Out1.x9 ~ (In1.x9*In1.flow_rate + In2.x9*In2.flow_rate) / Out1.flow_rate
-            Out1.x10 ~ (In1.x10*In1.flow_rate + In2.x10*In2.flow_rate) / Out1.flow_rate
-            Out1.x11 ~ (In1.x11*In1.flow_rate + In2.x11*In2.flow_rate) / Out1.flow_rate
-            Out1.x12 ~ (In1.x12*In1.flow_rate + In2.x12*In2.flow_rate) / Out1.flow_rate
-            Out1.x13 ~ (In1.x13*In1.flow_rate + In2.x13*In2.flow_rate) / Out1.flow_rate
+            Out1.S_O ~ (In1.S_O*In1.flow_rate + In2.S_O*In2.flow_rate) / Out1.flow_rate
+            Out1.S_I ~ (In1.S_I*In1.flow_rate + In2.S_I*In2.flow_rate) / Out1.flow_rate
+            Out1.S_S ~ (In1.S_S*In1.flow_rate + In2.S_S*In2.flow_rate) / Out1.flow_rate
+            Out1.S_NH ~ (In1.S_NH*In1.flow_rate + In2.S_NH*In2.flow_rate) / Out1.flow_rate
+            Out1.S_N2 ~ (In1.S_N2*In1.flow_rate + In2.S_N2*In2.flow_rate) / Out1.flow_rate
+            Out1.S_NO ~ (In1.S_NO*In1.flow_rate + In2.S_NO*In2.flow_rate) / Out1.flow_rate
+            Out1.S_ALK ~ (In1.S_ALK*In1.flow_rate + In2.S_ALK*In2.flow_rate) / Out1.flow_rate
+            Out1.X_I ~ (In1.X_I*In1.flow_rate + In2.X_I*In2.flow_rate) / Out1.flow_rate
+            Out1.X_S ~ (In1.X_S*In1.flow_rate + In2.X_S*In2.flow_rate) / Out1.flow_rate
+            Out1.X_H ~ (In1.X_H*In1.flow_rate + In2.X_H*In2.flow_rate) / Out1.flow_rate
+            Out1.X_STO ~ (In1.X_STO*In1.flow_rate + In2.X_STO*In2.flow_rate) / Out1.flow_rate
+            Out1.X_A ~ (In1.X_A*In1.flow_rate + In2.X_A*In2.flow_rate) / Out1.flow_rate
+            Out1.X_TS ~ (In1.X_TS*In1.flow_rate + In2.X_TS*In2.flow_rate) / Out1.flow_rate
             
         end
 end

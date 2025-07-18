@@ -1,6 +1,6 @@
-# using ModelingToolkit
-# using ModelingToolkit: t_nounits as t, D_nounits as D
-
+using ModelingToolkit, Plots, DifferentialEquations, Unitful, IfElse
+using ModelingToolkit: t_nounits as t, D_nounits as D
+using Symbolics
 
 include("MaterialStream.jl")
 
@@ -15,60 +15,60 @@ include("MaterialStream.jl")
         @parameters begin
             Out_factor[1:3] = [0.5,0.4,0.1]
         end
-
+        #TODO: change the x2,x3,... to state variable names before anything
         @equations begin
             # Mass balance equations
-            Out1.x1 ~ In1.x1
-            Out2.x1 ~ In1.x1
-            Out3.x1 ~ In1.x1
+            Out1.S_O ~ In1.S_O
+            Out2.S_O ~ In1.S_O
+            Out3.S_O ~ In1.S_O
 
-            Out1.x2 ~ In1.x2
-            Out2.x2 ~ In1.x2
-            Out3.x2 ~ In1.x2
+            Out1.S_I ~ In1.S_I
+            Out2.S_I ~ In1.S_I
+            Out3.S_I ~ In1.S_I
 
-            Out1.x3 ~ In1.x3
-            Out2.x3 ~ In1.x3
-            Out3.x3 ~ In1.x3
+            Out1.S_S ~ In1.S_S
+            Out2.S_S ~ In1.S_S
+            Out3.S_S ~ In1.S_S
 
-            Out1.x4 ~ In1.x4
-            Out2.x4 ~ In1.x4
-            Out3.x4 ~ In1.x4
+            Out1.S_NH ~ In1.S_NH
+            Out2.S_NH ~ In1.S_NH
+            Out3.S_NH ~ In1.S_NH
 
-            Out1.x5 ~ In1.x5
-            Out2.x5 ~ In1.x5
-            Out3.x5 ~ In1.x5
+            Out1.S_N2 ~ In1.S_N2
+            Out2.S_N2 ~ In1.S_N2
+            Out3.S_N2 ~ In1.S_N2
 
-            Out1.x6 ~ In1.x6
-            Out2.x6 ~ In1.x6
-            Out3.x6 ~ In1.x6
+            Out1.S_NO ~ In1.S_NO
+            Out2.S_NO ~ In1.S_NO
+            Out3.S_NO ~ In1.S_NO
 
-            Out1.x7 ~ In1.x7
-            Out2.x7 ~ In1.x7
-            Out3.x7 ~ In1.x7
+            Out1.S_ALK ~ In1.S_ALK
+            Out2.S_ALK ~ In1.S_ALK
+            Out3.S_ALK ~ In1.S_ALK
 
-            Out1.x8 ~ In1.x8
-            Out2.x8 ~ In1.x8
-            Out3.x8 ~ In1.x8
+            Out1.X_I ~ In1.X_I
+            Out2.X_I ~ In1.X_I
+            Out3.X_I ~ In1.X_I
 
-            Out1.x9 ~ In1.x9
-            Out2.x9 ~ In1.x9
-            Out3.x9 ~ In1.x9
+            Out1.X_S ~ In1.X_S
+            Out2.X_S ~ In1.X_S
+            Out3.X_S ~ In1.X_S
 
-            Out1.x10 ~ In1.x10
-            Out2.x10 ~ In1.x10
-            Out3.x10 ~ In1.x10
+            Out1.X_H ~ In1.X_H
+            Out2.X_H ~ In1.X_H
+            Out3.X_H ~ In1.X_H
 
-            Out1.x11 ~ In1.x11
-            Out2.x11 ~ In1.x11
-            Out3.x11 ~ In1.x11
+            Out1.X_STO ~ In1.X_STO
+            Out2.X_STO ~ In1.X_STO
+            Out3.X_STO ~ In1.X_STO
 
-            Out1.x12 ~ In1.x12
-            Out2.x12 ~ In1.x12
-            Out3.x12 ~ In1.x12
+            Out1.X_A ~ In1.X_A
+            Out2.X_A ~ In1.X_A
+            Out3.X_A ~ In1.X_A
 
-            Out1.x13 ~ In1.x13
-            Out2.x13 ~ In1.x13
-            Out3.x13 ~ In1.x13
+            Out1.X_TS ~ In1.X_TS
+            Out2.X_TS ~ In1.X_TS
+            Out3.X_TS ~ In1.X_TS
 
 
             # [Out1.x[i] ~ In1.x[i] for i = 1:13]...  # Concentrations are equal

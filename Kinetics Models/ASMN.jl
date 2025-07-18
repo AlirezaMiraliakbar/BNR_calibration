@@ -1,5 +1,5 @@
-# using ModelingToolkit, Plots, OrdinaryDiffEq
-# using ModelingToolkit: t_nounits as t, D_nounits as D
+using ModelingToolkit, Plots, OrdinaryDiffEq
+using ModelingToolkit: t_nounits as t, D_nounits as D
 
 # [1] Hiatt, W. C., & Grady, C. L. (2008). An updated process model for carbon oxidation, nitrification, and denitrification. Water Environment Research, 80(11), 2145-2156.
 

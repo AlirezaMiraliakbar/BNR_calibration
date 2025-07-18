@@ -528,7 +528,7 @@ end
 # Define the optimization model
 model = Model(EAGO.Optimizer)
 @variable(model, pL[i] <= p[i=1:5] <= pU[i])
-@objective(model, Min, obj_func_numeric(p...))
+@objective(model, Min, )
 # having constraint here depends on how we formulate the problem, if the ODEs are implicily included in the objective function, then we don't need to add constraints here.
 optimize!(model)
 
