@@ -18,7 +18,7 @@ using Random, Dates
 function generate_effluent_ss()
     
     # reading CSV file containing concentrations
-    df = CSV.read("./Effluent/UConn_Effluent_converted.csv", DataFrame)
+    df = CSV.read("./Effluent/UConn_Effluent.csv", DataFrame)
 
     # computing COD from BOD using the previously saved COD/BOD ratios
     ratios_df = CSV.read("./Influent/COD_BOD_ratios.csv", DataFrame)
@@ -104,7 +104,4 @@ function generate_effluent_ss()
     effluent_means_vector = convert(Vector{Float64}, effluent_means_vector)
     return effluent_means_vector
 end
-
-# Call the function to generate the effluent data
-generate_effluent_ss()
 

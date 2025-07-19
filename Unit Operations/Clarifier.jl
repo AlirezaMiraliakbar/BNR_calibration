@@ -31,7 +31,7 @@
         # All particulate matter is recycled from clarifier
         outlet_stream.X_I ~ 0.0
         outlet_stream.X_S ~ 0.0
-        outlet_stream.H ~ 0.0
+        outlet_stream.X_H ~ 0.0
         outlet_stream.X_STO ~ 0.0
         outlet_stream.X_A ~ 0.0
         outlet_stream.X_TS ~ 0.0
